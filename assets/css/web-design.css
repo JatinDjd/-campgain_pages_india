@@ -15,6 +15,9 @@ a:hover{text-decoration:none}
 .iti__flag-container {
     padding: 18px 3px !important;
 }
+.logo img {
+    width: 50px !important;
+}
 input {
     height: 50px !important;
 } */
@@ -57,7 +60,7 @@ input {
 }
 /*------------------banner----------------*/
 .ban-file {
-    padding: 0rem 0rem 0rem 15rem;
+    padding: 0rem 0rem 0rem 10rem;
     display: flex;
     align-items: center;
 }
@@ -613,6 +616,9 @@ button.btn.btn-link.plus-faq i {
     :root {
         --main-pad: 0rem 1rem;
     }
+.logo img {
+    width: 30px;
+}
     #build ,#web-design,.scroll,#prime,#elements,#development, #really,#call, #indus_try { padding-top: 2rem; padding-bottom: 2rem;}
     .title h2,#scroll .scroll>div:first-child h2 ,.build-comp h2 ,#call h2{ font-size:28px;line-height:1.2;  }
     .left-side a, .business-serv-list a, .build-comp div a, #call a, .tab-wb-content a, .prime a {font-size: 14px; width: 120px;}
