@@ -59,7 +59,7 @@
 				</div>
 			</div>
       <div id="web-video">
-        <video autoplay  muted width="100%" poster="assets/images/webdesign/Website Development Video.mp4">
+        <video autoplay  muted width="100%" poster="assets/images/webdesign/video_thumbnail.png">
           <source src="assets/images/webdesign/Website Development Video.mp4" type="video/mp4">      
         </video>     
 
@@ -115,10 +115,30 @@
 			
 			<div id="build">
 				<div class="build-comp" >
-          <div class="build-gif"><img loading="lazy" src="assets/images/webdesign/a4887e69490411.5b83afd44ab72 (1).gif"></div>
-          <div class="build-gif"><img loading="lazy" src="assets/images/webdesign/elephant.gif"></div>
-          <div class="build-gif"> <img loading="lazy" src="assets/images/webdesign/car.gif"></div>
-          <div class="build-gif"><img loading="lazy" src="assets/images/webdesign/mountains.gif"></div>
+          <div class="build-gif">
+            <!-- <img loading="lazy" src="assets/images/webdesign/a4887e69490411.5b83afd44ab72 (1).gif"> -->
+            <video autoplay  muted width="100%">
+              <source src="assets/images/webdesign/A4887e69490411.5B83afd44ab72 (1).mp4" type="video/mp4">      
+            </video>    
+          </div>
+          <div class="build-gif">
+            <!-- <img loading="lazy" src="assets/images/webdesign/elephant.gif"> -->
+            <video autoplay  muted width="100%">
+              <source src="assets/images/webdesign/elephant.mp4" type="video/mp4">      
+            </video>    
+          </div>
+          <div class="build-gif"> 
+            <!-- <img loading="lazy" src="assets/images/webdesign/car.gif"> -->
+            <video autoplay  muted width="100%">
+              <source src="assets/images/webdesign/Car.mp4" type="video/mp4">      
+            </video>    
+          </div>
+          <div class="build-gif">
+            <!-- <img loading="lazy" src="assets/images/webdesign/mountains.gif"> -->
+            <video autoplay  muted width="100%">
+              <source src="assets/images/webdesign/mountains.mp4" type="video/mp4">      
+            </video>    
+          </div>
 					<!-- <div>
 						<h2>Build Your <br>Future Company </h2>
 						<p>The online market is proven to be a boon for all businesses around the globe. Many businesses are introduced to new audiences through online mode. Online audiences are much more vast than offline mode. Today everybody chooses to order online rather than going to buy the product. We all enjoy home delivery services. So it is important to invest in building good web interfaces, Master Infotech deals in  all kinds of web development, and web designing services. We try to provide authentic results to our customers.</p>
@@ -414,7 +434,7 @@
 
     <footer>
       <div class="footer-new" id="contact-footer-form">
-        <div class="footer-contact-form">
+        <div id="#footer-form" class="footer-contact-form">
              <div>
               <h3>Create Your Compelling</h3>
               <h1>
@@ -424,10 +444,11 @@
                 that captivate audiences and win hearts.</h4>
             </div> 
             <div>
-                 <div><input type="text" placeholder="Name"></div>
-                 <div><input type="email" placeholder="Email"></div>
-                 <div><input type="text" placeholder="Phone"></div>
-                 <div class="submit-btn"><button class="white-btn">Let's Connect</button></div>
+                 <div><input id="form-field-name" type="text" placeholder="Name"></div>
+                 <div><input id="form-field-email" type="email" placeholder="Email"></div>
+                 <div><input id="form-field-b26ecb6" type="text" placeholder="Phone"></div>
+                 <div id="footer-form-error"></div>
+                 <div class="submit-btn"><button type="submit" id="new-form-submit-btn" class="white-btn">Let's Connect</button></div>
             </div>
 
         </div>
@@ -497,7 +518,7 @@
       </footer>
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://masterinfotech.com/assets/js/intlTelInput.js?<?php echo time(); ?>"></script>
+      <!-- <script src="https://masterinfotech.com/assets/js/intlTelInput.js?<?php echo time(); ?>"></script> -->
 	  <script>
 		$(function() {
 		$('.tab-wb-title').on('click', function(e) {
@@ -730,3 +751,115 @@
     
         </script>
         <script src="https://masterinfotech.com/landingpages/sendmailfunction.js" type="text/javascript"></script>
+        <script>
+          var submitbtn = document.getElementById('new-form-submit-btn');		
+submitbtn.addEventListener('click', function(e){		
+  e.preventDefault();		
+  validateform();
+}		
+);		
+
+function validateform(){
+
+    // Check if all required fields are filled out
+      var isValid = true;
+      $("#footer-form input[required]").each(function () {
+        if ($(this).val().trim() === "") {
+          isValid = false;
+        }
+      });
+
+      // If any required field is empty, show an error message and prevent submission
+      if (!isValid) {
+        $("#footer-form-error").html("Please fill out all required fields.").css("color", "red");
+        return;
+      }else{
+          generatetoken();		
+      }
+}
+
+function generatetoken() {		
+ 		
+
+  $.ajax({		
+   url: "https://masterinfotech.com/api/generate-token",		
+   type: "post",		
+   success: function(response) {		
+    console.log(response);		
+    if (response.token) {		
+     submitform(response.token);		
+     console.log('submitform done');		
+    } 		
+   },		
+   error: function(jqXHR, textStatus, errorThrown) {		
+    console.log(textStatus, errorThrown); }		
+  });		
+
+}		
+
+let ipAddressValue;
+
+    function getIpAddress(callback) 
+      {
+          $.ajax({		
+            url: "https://masterinfotech.com/api/get-ip",		
+            type: "get",		
+            success: function(response) {		
+              callback(response);
+            },		
+            error: function(jqXHR, textStatus, errorThrown) {		
+             console.log('Failed to fetch IP address', errorThrown);
+             callback(null);	
+            }
+           });
+
+      }
+
+      // Example usage (same as before)
+      getIpAddress(function(ipAddress) {
+        if (ipAddress) {
+          console.log('IP Address:', ipAddress);
+          ipAddressValue = returnip(ipAddress);
+
+
+        } else {
+          console.log('Failed to get IP address.');
+        }
+      });
+
+      function returnip(ip)
+      {
+        return ip ;
+      }
+
+function submitform(token) {		
+
+  var name = $("#form-field-name").val();		
+  var email = $("#form-field-email").val();		
+  var phone = $("#form-field-b26ecb6").val();		
+  var pagename = window.location.href;
+  var values = {		
+   "name": name,		
+   "email": email,		
+   "phone": phone,
+   "pagename": pagename,
+   "location": ipAddressValue,
+   "campaign_name": "Web design campaign india"	
+  };		
+  		
+  $.ajax({		
+   url: "https://masterinfotech.com/api/verify-token",		
+   type: "post",		
+   headers:{'token':token},		
+   data: values,		
+   success: function(response) {		
+    console.log(response + "MIT ");		
+window.location.href = "https://service.masterinfotech.com/thankyou.html";		
+   },		
+   error: function(jqXHR, textStatus, errorThrown) {		
+    console.log(errorThrown + "MIT ");}		
+  });		
+
+
+ }
+        </script>
