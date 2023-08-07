@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <script src="https://kit.fontawesome.com/6eca9af6e8.js" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -408,11 +412,11 @@
                             that captivate audiences and win hearts.</h4>
                     </div>
                     <div>
-                        <div><input id="form-field-name" type="text" placeholder="Name"></div>
-                        <div><input id="form-field-email" type="email" placeholder="Email"></div>
-                        <div><input id="form-field-b26ecb6" type="text" placeholder="Phone"></div>
+                        <div><input  type="text" placeholder="Name" id="userName"></div>
+                        <div><input  type="email" placeholder="Email" id="userEmail"></div>
+                        <div><input  type="text" placeholder="Phone" id="userPhone"></div>
                         <div id="footer-form-error"></div>
-                        <div class="submit-btn"><button type="submit" id="new-form-submit-btn" class="white-btn">Let's
+                        <div class="submit-btn"><button type="submit" id="new-form-submit-btn" class="white-btn" onclick="generatetoken()">Let's
                                 Connect</button></div>
                     </div>
 
@@ -494,7 +498,7 @@
         </footer>
 
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 
     
     <script>
@@ -540,35 +544,26 @@ let ipAddressValue;
   getIpAddress(function(ipAddress) {
     if (ipAddress) {
       console.log('IP Address:', ipAddress);
-      ipAddressValue = returnip(ipAddress);
-
-
+      ipAddressValue = ipAddress;
     } else {
       console.log('Failed to get IP address.');
     }
   });
 
-  function returnip(ip)
-  {
-    return ip ;
-  }
-
-
 function submitform(token) {
 
-var subscription = null;
+
 var pagename = window.location.href;
-if (localStorage.getItem('subscriptionplan')) {
-    subscription = localStorage.getItem('subscriptionplan');
-}
+var userName = document.getElementById("userName").value;
+var userEmail = document.getElementById("userEmail").value;
+var userPhone = document.getElementById("userPhone").value;
 var values = {
-    "name": formname,
-    "email": email,
-    "phone": phone,
+    "name": userName,
+    "email": userEmail,
+    "phone": userPhone,
     "pagename": pagename,
     "location": ipAddressValue,
-    "subscription": subscription,
-    "campaign_name": "UK Shopify Campaign"
+    "campaign_name": "India branding Campaign"
 };
 console.log(values);
 $.ajax({
@@ -578,9 +573,6 @@ $.ajax({
     data: values,
     success: function (response) {
         console.log(response + "MIT ");
-        if (localStorage.getItem('subscriptionplan')) {
-            localStorage.removeItem('subscriptionplan');
-        }
         window.location.href = "https://masterinfotech.co.uk/branding/thankyou/index.htm";
     },
     error: function (jqXHR, textStatus, errorThrown) {
