@@ -207,8 +207,8 @@ footer{
         .client-pt{width:100%;padding: 1rem 0rem ;}    
         .client-img h4 {
             font-size: 18px;}
-            .client-list{padding:02rem 0rem 2rem;}   
-            .footer-client{padding:0rem;} 
+        .client-list{padding:02rem 0rem 2rem;}   
+        .footer-client{padding:0rem;} 
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){	
 	:root {
@@ -221,10 +221,10 @@ footer{
     font-size: 60px;}
     .footer-contact-form h4 {
         font-size: 20px;}
-        .client-img h4 {
-            font-size: 18px;}
-            .client-list{padding:04rem 0rem 2rem;}   
-            .footer-client{padding:2rem 0rem 5rem;} 
+    .client-img h4 {
+        font-size: 18px;}
+    .client-list{padding:04rem 0rem 2rem;}   
+    .footer-client{padding:2rem 0rem 5rem;} 
 }
 @media only screen and (min-width: 1024px) and (max-width: 1200px){
 	:root {
