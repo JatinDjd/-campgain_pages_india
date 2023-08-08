@@ -32,15 +32,16 @@ footer{
     background-color:#303030;
     padding:var(--main-pad);
 }
-.footer-contact-form{display:flex;padding-top:7rem;padding-bottom:7rem;}
+.footer-contact-form{display:flex;padding-top:7rem;padding-bottom:5rem;}
 
 .footer-contact-form>div{width:50%;}
-.footer-contact-form>div:last-child{padding-top:5rem;padding-left:2rem;}
+.footer-contact-form>div:last-child{padding-top:2rem;padding-left:2rem;}
 .footer-contact-form h3{
         color: #FFFFFF;
         font-size: 50px;
         font-weight: 400;
         line-height: 1.3em;
+        padding: 2rem 0rem;
     
 }
 .footer-contact-form h1{
