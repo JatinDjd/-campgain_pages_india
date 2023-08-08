@@ -513,9 +513,30 @@
 
     
     <script>
+    function validateForm(){
+    
+    var returnVal = true;
+
+    let x = document.forms["myForm"]["u_name"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+    returnVal = false;
+    }
+
+    var number = document.forms['myForm']['u_phone'].value;
+    console.log(number);
+
+    if(number.length!=10){
+    alert("Enter a valid Number");
+    returnVal = false;
+    }
+
+return returnVal;
+}
 
 function generatetoken() {
-
+    var checker = validateForm();
+    if(checker == false)return;
 $.ajax({
     url: "https://masterinfotech.com/api/generate-token",
     type: "post",
