@@ -210,6 +210,9 @@ footer{
             font-size: 18px;}
         .client-list{padding:02rem 0rem 2rem;}   
         .footer-client{padding:0rem;} 
+        .submit-btn {
+             text-align:left; 
+        }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){	
 	:root {
