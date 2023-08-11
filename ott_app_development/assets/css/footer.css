@@ -141,7 +141,7 @@ input::-webkit-inner-spin-button {
 
     width:80%;
     display:inline-block;
-    padding:0.7rem 6rem;
+    padding:0.7rem 5rem;
     text-align:center;
     font-family:'Poppins';
     font-weight:300;
@@ -253,7 +253,7 @@ input::-webkit-inner-spin-button {
     }
 
     .creative-boost-section .btn-footer {
-        padding: 0.7rem 4rem;
+        padding: 0.7rem 3rem;
     }
 
 }
@@ -264,7 +264,7 @@ input::-webkit-inner-spin-button {
     
     .creative-boost-left-header h1 {
         font-size: 65px;
-        line-height: 95.8px;
+        line-height: 102px;
     }
 
     .creative-boost-details form {
@@ -273,12 +273,12 @@ input::-webkit-inner-spin-button {
     }
 
     .creative-boost-section .btn-footer {
-        padding: 0.5rem 3rem;
+        padding: 0.5rem 2rem;
     }
 
-    .form-left input{
-
-        padding-bottom:1.4rem;
+    .form-left input {
+        padding-bottom: 1.7rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -293,13 +293,6 @@ input::-webkit-inner-spin-button {
         padding: 80px 0px;
     }
 
-    .form-left input {
-        
-        margin-bottom: 3rem;
-        padding-bottom: 1rem;
-
-    }
-
     .form-right textarea {
        
         margin-bottom: 2rem;
@@ -308,13 +301,9 @@ input::-webkit-inner-spin-button {
     .creative-boost-left-header h1 {
         letter-spacing:0px;
     }
-
-    
 }
 
 @media screen and (max-width:1280px){
-
-    
 
     .form-right label {
         font-size: 25px;
@@ -327,12 +316,12 @@ input::-webkit-inner-spin-button {
     }
 
     .creative-boost-section .btn-footer {
-        padding: 0.5rem 2rem;
+        padding: 0.5rem 1rem;
     }
 
     .creative-boost-left-header h1 {
         font-size: 60px;
-        line-height: 81.8px;
+        line-height: 96px;
     }
 }
 
@@ -341,7 +330,7 @@ input::-webkit-inner-spin-button {
 
     .creative-boost-left-header h1 {
         font-size: 56px;
-        line-height:77.8px;
+        line-height: 86px;
     }
     .form-left input {
         margin-bottom: 2.5rem;
@@ -366,7 +355,10 @@ input::-webkit-inner-spin-button {
         margin-bottom: 1rem;
     }
 
-  
+    .form-left input {
+        margin-bottom: 3rem;
+        padding-bottom: 1.2rem;
+    }
 }
 
 @media screen and (max-width:1024px){
