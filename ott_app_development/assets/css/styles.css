@@ -6,6 +6,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+
+    text-decoration:none;
+}
 
 span {
 
@@ -642,6 +646,11 @@ img {
 
 .plat-cont p,.plat-cont h2,.plat-cont h3,.plat-cont h4,.plat-list>div:hover ul li {
     color: #fff;
+}
+
+.cont-new-plat:hover{
+
+    cursor:pointer;
 }
 
 #magnify .plat-cont {
