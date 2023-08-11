@@ -290,7 +290,7 @@ a.orange-btn:hover {
 
 #del-slider{padding:var(--main-pad);padding-top:5rem;padding-bottom: 5rem;}
 /* faq */
-section.faq_main {
+/* section.faq_main {
     margin: 5rem 20rem;
 }
 section.faq_main .faq-drawer {
@@ -349,7 +349,7 @@ input[type="checkbox"] {
     max-height: 0px;
     overflow: hidden;
     transition: 0.25s ease-in-out;
-}
+} */
 
 
  /* RESPONSIVE CSS */
